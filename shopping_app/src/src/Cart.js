@@ -38,7 +38,7 @@ class Cart extends Component{
 
         setTimeout(()=>{
             this.setState({
-                showCart:!this.state.showCart
+                    showCart:!this.state.showCart
                 }
             )},0)
     }
@@ -85,12 +85,15 @@ class Cart extends Component{
                 else{
                     //console.log(pModel[index].name);
                     return (
-                        <Card key={pModel[index].name}>
-                            <Row type="flex">
+                        <Card
+                            style={{width:1000}}
+                            key={pModel[index].name}>
+                            <Row type="flex"
+                                 style={{float:"left",marginTop:30,marginRight:30}}>
                                 <img
-                                style={{cursor:"pointer",width:300,height:250}}
-                                src={pModel[index].path}
-                                alt=""/>
+                                    style={{cursor:"pointer",width:300,height:250}}
+                                    src={pModel[index].path}
+                                    alt=""/>
                                 <div style={{marginLeft:10}}>
                                     <p>标题：{pModel[index].name}</p>
                                     <p>价格：{pModel[index].price}</p>
@@ -98,6 +101,7 @@ class Cart extends Component{
                                     <p>共计：{product*pModel[index].price}</p>
                                     <Button
                                         style={{marginTop:10}}
+                                        danger={true}
                                         onClick={()=>this.handleRemove(product,index)}>
                                         删除
                                     </Button>
@@ -111,11 +115,9 @@ class Cart extends Component{
             });
         }
         return (
-            <div style={{padding:'100px 50px 10px'}}>
+            <div>
                 <Button
-                    id="popbtn"
-                    type="Primary"
-                    className="btn btn-success"
+                    style={{background:"#99ff66"}}
                     onClick={()=>this.handleClick()}>我的购物车
                 </Button>
 

@@ -22,6 +22,7 @@ class Item extends Component{
 			<Card
 				bodyStyle={{padding:0}}
 				style={{
+					float:"left",
 					width:302,
 					marginTop:10,
 					marginRight:10
@@ -31,7 +32,7 @@ class Item extends Component{
 					align="middle"
 					justify="center"
 					style={{marginBottom:10,height:250}}
-					>
+				>
 					<img
 						src={source}
 						alt=""
@@ -39,19 +40,20 @@ class Item extends Component{
 						data-toggle='modal'
 						data-targer={`#${popId}`}/>
 				</Row>
-				
+
 				<Row
 					style={{margin:10}}>
 					<h3>{name}</h3>
 					<h3>剩余库存：{quantity}</h3>
 				</Row>
-					
+
 				<Row
 					align="middle"
 					justify="center"
 					type="flex"
-					style={{marginBottom:10}}>
+					style={{marginBottom:10,marginLeft:100}}>
 					<Button
+						style={{background:"#3399ff",color:"white"}}
 						onClick={()=>this.handleClick()}
 						type="primary">加入购物车</Button>
 				</Row>

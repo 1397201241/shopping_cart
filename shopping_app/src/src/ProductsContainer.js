@@ -35,27 +35,27 @@ function ProductsContainer(props){
 
 	if(products.length!==0){
 		return (
-			<div>
-			{
-
-				goodList.map((row,rIndex)=>(
-					<Row
-						type="flex"
-						key={`row-${rIndex}`}>
-						{
-							row.map((item,index)=>(
-								<Item
-									addToCart={addCart}
-									quantity={qty[item.index]}
-									source={item.path}
-									key={index}
-									index={item.index}
-									name={item.name}/>
-							))
-						}
-					</Row>
-				))
-			}
+			<div
+				style={{width:1000}}>
+				{
+					goodList.map((row,rIndex)=>(
+						<Row
+							type="flex"
+							key={`row-${rIndex}`}>
+							{
+								row.map((item,index)=>(
+									<Item
+										addToCart={addCart}
+										quantity={qty[item.index]}
+										source={item.path}
+										key={index}
+										index={item.index}
+										name={item.name}/>
+								))
+							}
+						</Row>
+					))
+				}
 			</div>
 		)
 	}

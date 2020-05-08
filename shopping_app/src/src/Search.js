@@ -15,7 +15,7 @@ class Search extends Component{
         return (
             <Row>
                 <Col>
-                    <Input id="search" placeholder="请输入"/>
+                    <Input id="search" placeholder="请输入" style={{width:350}}/>
                     <Button
                         type="primary"
                         onClick={()=>this.handleClick()}

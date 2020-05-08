@@ -36,8 +36,8 @@ class Shopping extends Component{
 		console.log("change?");
 	}
 	/**
-	加入购物车
-	**/
+	 加入购物车
+	 **/
 	addCart(index){
 		const currentQty=this.state.qty;
 		const selQty=this.state.selectQty;
@@ -47,7 +47,7 @@ class Shopping extends Component{
 		if(currentQty[indexNum]>0){
 			currentQty[indexNum]--;
 			selQty[indexNum]++;
-			
+
 		}else{
 			alert("很抱歉，已售完");
 		}
@@ -67,8 +67,8 @@ class Shopping extends Component{
 		});
 	}
 	/**
-	搜索商品
-	**/
+	 搜索商品
+	 **/
 	searchItem(itemName){
 		let findItem=false;
 		//空处理
@@ -102,8 +102,8 @@ class Shopping extends Component{
 		}
 	}
 	/**
-	从购物车中删除
-	**/
+	 从购物车中删除
+	 **/
 	handleRemove(quantity,id){
 		const originalQty=[10,8,15,5,9,20];
 		const selProducts=this.state.selectProducts;
@@ -127,12 +127,13 @@ class Shopping extends Component{
 		});
 	}
 	/**
-	渲染UI
-	**/
+	 渲染UI
+	 **/
 	render(){
 		return(
 			<div>
-				<Row>
+				<div
+					style={{height:900,marginBottom:0}}>
 					<Col>
 						<Search
 							searchItem={this.searchItem}/>
@@ -141,8 +142,9 @@ class Shopping extends Component{
 							products={this.state.filterProducts}
 							qty={this.state.qty}/>
 					</Col>
-				</Row>
-				<Row>
+				</div>
+				<div
+					style={{marginTop:10}}>
 					<Col>
 						<Cart
 							handleRemove={this.handleRemove}
@@ -150,7 +152,7 @@ class Shopping extends Component{
 							qty={this.state.selectQty}
 							pModel={this.state.products}/>
 					</Col>
-				</Row>
+				</div>
 			</div>
 		)
 	}

@@ -30,7 +30,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/desktop-tutorial" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1aTadVGA4ZfcMA5eE8E7hGJ4iX3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -79,6 +79,7 @@
       <workItem from="1588850186916" duration="2525000" />
       <workItem from="1588853515032" duration="4678000" />
       <workItem from="1588902257017" duration="3806000" />
+      <workItem from="1588914610054" duration="164000" />
     </task>
     <servers />
   </component>
