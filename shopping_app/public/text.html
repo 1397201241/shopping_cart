@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const allProducts=[
+        {
+            index:'0',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'apple',
+            price:'4.99',
+            quantity:10
+        },
+        {
+            index:'1',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'pear',
+            price:'3.59',
+            quantity:8
+        },
+        {
+            index:'2',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'watermelon',
+            price:'4.99',
+            quantity:15
+        },
+        {
+            index:'3',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'banana',
+            price:'4.99',
+            quantity:5
+        },
+        {
+            index:'4',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'kiwi berry',
+            price:'4.99',
+            quantity:9
+        },
+        {
+            index:'5',
+            path:'http://gw.alicdn.com/tfs/TB1UPdcwAPok1RjSZKbXXX1IXXa-1200-800.jpg',
+            name:'pineapple',
+            price:'4.99',
+            quantity:20
+        }];
+    function getRandomArraySlice(arr,count){
+        const newArr=[].concat(arr);//返回arr数组的副本，concat方法不会改变原数组
+        for (let i=0,len=newArr.length;i<len;i++){
+            const x=Math.floor(Math.random()*count);
+            console.log(x);
+            //swap
+            const tmp=newArr[x];
+            newArr[x]=newArr[i];
+            newArr[i]=tmp;
+        }
+        return newArr.slice(0,count);
+    }
+
+    function arrayChunk(arr=allProducts,size=4,options){
+        let groups=[];
+        if (arr&&arr.length>0){
+            /**
+            console.log(arr);
+            groups=arr.map(i=>(i%size===0?arr.slice(i,i+size):null));
+            console.log(groups);
+            groups=groups.filter(e=>e);
+            console.log(groups);
+            * */
+            groups=arr.map((e,i)=>(i%size===0?arr.slice(i,i+size):null)).filter(e=>e);
+        }
+        if (options&&options.autoComplete){
+            const lastIndex=groups.length-1;
+            if (lastIndex>=0){
+                groups[lastIndex]=groups[lastIndex].concat(
+                    this.getRandomArraySlice(arr.slice(0,size*lastIndex),size-groups[lastIndex].length)
+                );
+
+            }
+        }
+        return groups;
+    }
+
+    //console.log(arrayChunk(allProducts,3));
+
+    function division(arg1,arg2) {
+        var result=arg1/arg2;
+        return result;
+    }
+    console.log(division(1.7976931348623157E+308,1.7976931348623157E+309));
+
+</script>
+</body>
+</html>
